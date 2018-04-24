@@ -77,6 +77,6 @@ def computeElasticPrincipalGraph(data, NumNodes, newDim=None, drawPCAview=True,
 
     if newDim is not None:
         NodePositions = np.dot(NodePositions, vglobal[:, indPC].T)
-    # Edges = np.vstack(np.triu(ElasticMatrix, 1).nonzero())
+    Edges = np.vstack(np.triu(ElasticMatrix, 1).nonzero())
     NodePositions += mv
-    return NodePositions, ElasticMatrix
+    return NodePositions, ElasticMatrix, Edges
