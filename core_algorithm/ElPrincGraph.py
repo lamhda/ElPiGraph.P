@@ -57,7 +57,7 @@ def ElPrincGraph(X, NumNodes, Lambda, Mu, InitNodePosition=None,
 
     print("NODE:")
     while NodeP.shape[0] < NumNodes:
-        print(NodeP.shape[0]+1,end=" ")
+        print(NodeP.shape[0],end=" ")
         for k in range(growGrammar.shape[0]):
             NodeP, em, partition, dists, ElasticEnergy, MSE, EP, RP = (
                     ao.ApplyOptimalGraphGrammarOperation(X, NodeP, em,
