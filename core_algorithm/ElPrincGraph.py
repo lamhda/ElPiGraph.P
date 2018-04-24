@@ -48,15 +48,18 @@ def ElPrincGraph(X, NumNodes, Lambda, Mu, InitNodePosition=None,
     UR = em.diagonal()
     if (UR > 0).sum() == 0:
         em = em + np.diag(Mu*np.ones((CurrentNumberOfNodes)))
-    if verbose:
-        print('BARCODE\tENERGY\tNNODES\tNEDGES\tNRIBS\tNSTARS' +
-              '\tNRAYS\tNRAYS2\tMSE MSEP\tFVE\tFVEP\tUE\tUR\tURN\tURN2\tURSD')
+    # if verbose:
+    #     print('BARCODE\tENERGY\tNNODES\tNEDGES\tNRIBS\tNSTARS' +
+    #           '\tNRAYS\tNRAYS2\tMSE MSEP\tFVE\tFVEP\tUE\tUR\tURN\tURN2\tURSD')
     if growGrammar.shape[0] <= shrinkGrammar.shape[0]:
         raise ValueError("The tree cannot grow if less growing grammar than " +
                          "shrinking grammar.")
+
+    print("NODE:")
     while NodeP.shape[0] < NumNodes:
+        print(NodeP.shape[0]+1,end=" ")
         for k in range(growGrammar.shape[0]):
-            NodeP, em, partition, dists = (
+            NodeP, em, partition, dists, ElasticEnergy, MSE, EP, RP = (
                     ao.ApplyOptimalGraphGrammarOperation(X, NodeP, em,
                                                          growGrammar[k],
                                                          MaxBlockSize, verbose,
@@ -64,11 +67,15 @@ def ElPrincGraph(X, NumNodes, Lambda, Mu, InitNodePosition=None,
                                                          MaxNumberOfIterations,
                                                          eps))
         for k in range(shrinkGrammar.shape[0]):
-            NodeP, em, partition, dists = (
+            NodeP, em, partition, dists, ElasticEnergy, MSE, EP, RP = (
                     ao.ApplyOptimalGraphGrammarOperation(X, NodeP, em,
                                                          shrinkGrammar[k],
                                                          MaxBlockSize, verbose,
                                                          TrimmingRadius,
                                                          MaxNumberOfIterations,
                                                          eps))
+    if verbose:
+        print("",end="\n")
+        print("E=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP, ", RP=", RP)
+    print("Done")
     return NodeP, em

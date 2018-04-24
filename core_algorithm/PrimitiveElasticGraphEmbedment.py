@@ -72,10 +72,10 @@ def PrimitiveElasticGraphEmbedment(X, NodePositions, ElasticMatrix,
                 X, PointWeights, SpringLaplacianMatrix, partition)
         diff = ComputeRelativeChangeOfNodePositions(
                 NodePositions, NewNodePositions)
-        if verbose:
-            print("Iteration ", (i+1), " difference of node position=", diff,
-                  ", Energy=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP,
-                  ", RP=", RP)
+        # if verbose:
+        #     print("Iteration ", (i+1), " difference of node position=", diff,
+        #           ", Energy=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP,
+        #           ", RP=", RP)
         if diff < eps:
             break
         NodePositions = NewNodePositions
@@ -83,8 +83,8 @@ def PrimitiveElasticGraphEmbedment(X, NodePositions, ElasticMatrix,
                                      SquaredX, TrimmingRadius)
     ElasticEnergy, MSE, EP, RP = CG.ComputePrimitiveGraphElasticEnergy(
                     NodePositions, ElasticMatrix, dists)
-    if verbose:
-        print("E=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP, ", RP=", RP)
+    # if verbose:
+    #     print("E=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP, ", RP=", RP)
     EmbeddedNodePositions = NodePositions
     return (EmbeddedNodePositions, ElasticEnergy, partition, dists,
             MSE, EP, RP)

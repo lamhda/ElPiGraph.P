@@ -41,7 +41,7 @@ def ApplyOptimalGraphGrammarOperation(X, NodePositions, ElasticMatrix,
         Mus[inds] = 0
         EM = EM1 + np.diag(Mus)
         # TODO add pointweights ?
-        nodep, ElasticEnergy, part, dist, *_ = (
+        nodep, ElasticEnergy, part, dist, MSE, EP, RP = (
                 PrimitiveElasticGraphEmbedment(X,
                                                NodePositionsArrayAll[:, :, i],
                                                EM, MaxNumberOfIterations, eps,
@@ -53,4 +53,7 @@ def ApplyOptimalGraphGrammarOperation(X, NodePositions, ElasticMatrix,
             partition = part
             dists = dist
             NewElasticMatrix = EM
-    return NewNodePositions, NewElasticMatrix, partition, dists
+
+    # if verbose:
+    #     print("E=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP, ", RP=", RP)
+    return NewNodePositions, NewElasticMatrix, partition, dists, ElasticEnergy, MSE, EP, RP
