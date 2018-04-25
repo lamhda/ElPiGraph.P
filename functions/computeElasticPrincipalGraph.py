@@ -7,7 +7,7 @@ Created on Tue Jan 30 10:56:58 2018
 import numpy as np
 from core_algorithm.ElPrincGraph import ElPrincGraph
 from core_algorithm.MakeUniformElasticMatrix import MakeUniformElasticMatrix
-import PCAView as PCAV
+from functions.PCAView import PCA
 
 
 #def PCA(data):
@@ -50,10 +50,10 @@ def computeElasticPrincipalGraph(data, NumNodes, newDim=None, drawPCAview=True,
         EM = MakeUniformElasticMatrix(InitEdges, Lambda, Mu)
     mv = data.mean(axis=0)
     data_centered = data - mv
-    vglobal, uglobal, explainedVariances = PCAV.PCA(data_centered)
+    vglobal, uglobal, explainedVariances = PCA(data_centered)
     if NodeP is not None:
         NodeP = NodeP - mv
-        vg2, ug2, explainedV2 = PCAV.PCA(NodeP)
+        vg2, ug2, explainedV2 = PCA(NodeP)
     if newDim is not None:
         tmp = newDim.shape[0]
         if tmp == 1:

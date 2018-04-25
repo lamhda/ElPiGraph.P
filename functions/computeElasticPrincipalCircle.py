@@ -5,8 +5,8 @@ Created on Mon Feb  5 13:46:32 2018
 @author: Alexis Martin
 """
 
-import computeElasticPrincipalGraph as EPG
-from PCAView import PCA
+from functions.computeElasticPrincipalGraph import computeElasticPrincipalGraph
+from functions.PCAView import PCA
 import numpy as np
 
 
@@ -29,7 +29,7 @@ def computeElasticPrincipalCircle(data, NumNodes, newDim=None,
     NodeP[2, :] = mn + np.dot(st1, v1.T) + np.dot(st2, v2.T)
     NodeP[3, :] = mn + np.dot(st1, v1.T) - np.dot(st2, v2.T)
     ed = np.array([[0, 1], [2, 3], [1, 2], [3, 0]])
-    return EPG.computeElasticPrincipalGraph(data, NumNodes, newDim,
+    return computeElasticPrincipalGraph(data, NumNodes, newDim,
                                             drawPCAview,
                                             drawAccuracyComplexity,
                                             drawEnergy, Lambda,

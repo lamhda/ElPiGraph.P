@@ -4,14 +4,14 @@
 """
 import numpy as np
 import matplotlib.pyplot as plt
-import PCAView as PCAV
+from functions.PCAView import PCA
 plt.style.use('ggplot')
 
 def PlotPG(data,EPC):
 	# Perform PCA on the nodes
 	mv = EPC[0].mean(axis=0)
 	data_centered = EPC[0] - mv
-	vglobal, uglobal, explainedVariances = PCAV.PCA(data_centered)
+	vglobal, uglobal, explainedVariances = PCA(data_centered)
 
 	# Rotate the data using eigenvectors
 	RotData = np.dot((data - mv),vglobal)

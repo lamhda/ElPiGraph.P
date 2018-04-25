@@ -6,7 +6,7 @@ Created on Tue Feb  6 10:53:19 2018
 """
 
 import numpy as np
-from computeElasticPrincipalGraph import computeElasticPrincipalGraph
+from functions.computeElasticPrincipalGraph import computeElasticPrincipalGraph
 
 
 def computeElasticPrincipalCurve(data, NumNodes, newDim=None, drawPCAview=True,
