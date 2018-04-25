@@ -28,4 +28,4 @@ Usage
 
 Several guides are available to exemplify the behavior of ElPiGraph.R:
 
--   [Basic usage](docs/Basic usage.ipynb)
+-   [Basic usage](docs/Basic%20usage.ipynb)
