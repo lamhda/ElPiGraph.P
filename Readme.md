@@ -18,7 +18,7 @@ Mirkes](https://github.com/Mirkes)) is also
 Requirements
 ============
 
-The following python packages are needed:
+This code was tested with Python 3. In addition, the following packages are needed:
 
 -	numpy
 -	matplotlib
@@ -27,6 +27,4 @@ The following python packages are needed:
 Usage
 =====
 
-Several guides are available to exemplify the behavior of ElPiGraph.R:
-
--   [Basic usage](docs/Basic%20usage.ipynb)
+Here is a notebook showing cases of [basic usage](docs/Basic%20usage.ipynb)
