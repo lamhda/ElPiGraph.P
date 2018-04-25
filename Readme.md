@@ -8,6 +8,7 @@ Description
 This package provides an Python implementation of the ElPiGraph algorithm. A
 self-contained description of the algorithm is available
 [here](https://github.com/auranic/Elastic-principal-graphs/blob/master/ElPiGraph_Methods.pdf)
+or on this [arXiv paper](https://arxiv.org/abs/1804.07580)
 
 A native MATLAB implementation of the algorithm (coded by [Andrei
 Zinovyev](https://github.com/auranic/) and [Evgeny
