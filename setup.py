@@ -6,8 +6,8 @@ setup(name='elpigraph',
       url='https://github.com/LouisFaure/ElPiGraph.P',
       author='Alexi Martin',
       author_email='',
-      scripts=['core/funniest-joke'],
-      packages=['elpigraph'],
+      #scripts=['elpigraph/functions/PCAView.py'],
+      packages=['elpigraph.core_algorithm','elpigraph'],
       install_requires=[
           'numpy','matplotlib','scipy'
       ],

@@ -4,7 +4,7 @@
 """
 import numpy as np
 import matplotlib.pyplot as plt
-from functions.PCAView import PCA
+from .PCAView import PCA
 plt.style.use('ggplot')
 
 def PlotPG(data,EPC):

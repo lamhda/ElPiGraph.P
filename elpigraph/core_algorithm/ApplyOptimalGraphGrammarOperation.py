@@ -4,9 +4,9 @@ Created on Mon Jan 22 11:02:30 2018
 
 @author: Alexis Martin
 """
-from elpigraph.core_algorithm.PartitionData import PartitionData
-from elpigraph.core_algorithm.GraphGrammarOperation import GraphGrammarOperation
-from elpigraph.core_algorithm.PrimitiveElasticGraphEmbedment import PrimitiveElasticGraphEmbedment
+from .PartitionData import PartitionData
+from .GraphGrammarOperation import GraphGrammarOperation
+from .PrimitiveElasticGraphEmbedment import PrimitiveElasticGraphEmbedment
 import numpy as np
 
 

@@ -5,8 +5,8 @@ Created on Mon Jan  8 13:52:31 2018
 @author: Alexis Martin
 """
 import numpy as np
-from elpigraph.core_algorithm.ComputePrimitiveGraphElasticEnergy import ComputePrimitiveGraphElasticEnergy
-from elpigraph.core_algorithm.PartitionData import PartitionData 
+from .ComputePrimitiveGraphElasticEnergy import ComputePrimitiveGraphElasticEnergy
+from .PartitionData import PartitionData 
 
 # This is the core function for fitting a primitive elastic graph to the data
 # Inputs

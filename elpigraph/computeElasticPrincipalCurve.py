@@ -5,7 +5,7 @@ Created on Tue Feb  6 10:53:19 2018
 @author: Alexis Martin
 """
 import numpy as np
-from elpigraph.functions.computeElasticPrincipalGraph import computeElasticPrincipalGraph
+from .computeElasticPrincipalGraph import computeElasticPrincipalGraph
 def computeElasticPrincipalCurve(data, NumNodes, newDim=None, drawPCAview=True,
                                  drawAccuracyComplexity=True, drawEnergy=True,
                                  Lambda=0.01, Mu=0.1, InitNodeP=None,
