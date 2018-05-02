@@ -5,10 +5,8 @@ Created on Tue Jan 30 10:56:58 2018
 @author: Alexis Martin
 """
 import numpy as np
-from core_algorithm.ElPrincGraph import ElPrincGraph
-from core_algorithm.MakeUniformElasticMatrix import MakeUniformElasticMatrix
-from functions.PCAView import PCA
-
+from elpigraph.functions.PCAView import PCA
+from elpigraph.core_algorithm import ElPrincGraph
 
 #def PCA(data):
 #    """

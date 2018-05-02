@@ -5,9 +5,8 @@ Created on Mon Jan  8 13:52:31 2018
 @author: Alexis Martin
 """
 import numpy as np
-import core_algorithm.ComputePrimitiveGraphElasticEnergy as CG
-from core_algorithm.PartitionData import PartitionData
-
+from elpigraph.core_algorithm.ComputePrimitiveGraphElasticEnergy import ComputePrimitiveGraphElasticEnergy
+from elpigraph.core_algorithm.PartitionData import PartitionData 
 
 # This is the core function for fitting a primitive elastic graph to the data
 # Inputs
@@ -63,7 +62,7 @@ def PrimitiveElasticGraphEmbedment(X, NodePositions, ElasticMatrix,
         if verbose:
             partition, dists = PartitionData(X, NodePositions, MaxBlockSize,
                                              SquaredX, TrimmingRadius)
-            ElasticEnergy, MSE, EP, RP = CG.ComputePrimitiveGraphElasticEnergy(
+            ElasticEnergy, MSE, EP, RP = ComputePrimitiveGraphElasticEnergy(
                     NodePositions, ElasticMatrix, dists)
         else:
             partition, dists = PartitionData(X, NodePositions, MaxBlockSize,
@@ -81,7 +80,7 @@ def PrimitiveElasticGraphEmbedment(X, NodePositions, ElasticMatrix,
         NodePositions = NewNodePositions
     partition, dists = PartitionData(X, NodePositions, MaxBlockSize,
                                      SquaredX, TrimmingRadius)
-    ElasticEnergy, MSE, EP, RP = CG.ComputePrimitiveGraphElasticEnergy(
+    ElasticEnergy, MSE, EP, RP = ComputePrimitiveGraphElasticEnergy(
                     NodePositions, ElasticMatrix, dists)
     # if verbose:
     #     print("E=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP, ", RP=", RP)

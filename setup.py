@@ -1,13 +1,14 @@
 from setuptools import setup
 
 setup(name='elpigraph',
-      version='0.1',
+      version='0.9',
       description='Python implementation of Elpigraph',
       url='https://github.com/LouisFaure/ElPiGraph.P',
       author='Alexi Martin',
       author_email='',
-      packages=['functions','core_algorithm'],
+      scripts=['core/funniest-joke'],
+      packages=['elpigraph'],
       install_requires=[
-          'numpy','matplotlib'
+          'numpy','matplotlib','scipy'
       ],
       zip_safe=False)

@@ -5,8 +5,8 @@ Created on Fri Jan 26 10:48:28 2018
 @author: Alexis Martin
 """
 import numpy as np
-from core_algorithm.MakeUniformElasticMatrix import MakeUniformElasticMatrix
-import core_algorithm.ApplyOptimalGraphGrammarOperation as ao
+from elpigraph.core_algorithm.MakeUniformElasticMatrix import MakeUniformElasticMatrix
+from elpigraph.core_algorithm import ApplyOptimalGraphGrammarOperation as ao
 
 
 # TODO add report

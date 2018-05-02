@@ -6,7 +6,7 @@ Created on Fri Feb  9 10:11:02 2018
 """
 import numpy as np
 from scipy import linalg as la
-from core_algorithm.PartitionData import PartitionData
+#from core_algorithm.PartitionData import PartitionData
 
 
 def PCA(data):
