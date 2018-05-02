@@ -1,5 +1,5 @@
 import numpy as np
-from functions.computeElasticPrincipalGraph import computeElasticPrincipalGraph
+from .computeElasticPrincipalGraph import computeElasticPrincipalGraph
 
 
 def computeElasticPrincipalTree(data, NumNodes, newDim=None, drawPCAview=True,
