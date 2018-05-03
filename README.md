@@ -40,4 +40,9 @@ To install that package, clone this git, open a terminal on the root of the git 
 pip install .
 ```
 
+Or, without cloning, simply run the following command
+```bash
+pip install git+https://github.com/LouisFaure/ElPiGraph.P.git
+```
+
 Here is a notebook showing cases of [basic usage](elpigraph/docs/Basic%20usage.ipynb)
