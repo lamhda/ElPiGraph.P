@@ -5,8 +5,8 @@ Created on Mon Feb  5 13:46:32 2018
 @author: Alexis Martin
 """
 
-from functions.computeElasticPrincipalGraph import computeElasticPrincipalGraph
-from functions.PCAView import PCA
+from .computeElasticPrincipalGraph import computeElasticPrincipalGraph
+from .PCAView import PCA
 import numpy as np
 
 
