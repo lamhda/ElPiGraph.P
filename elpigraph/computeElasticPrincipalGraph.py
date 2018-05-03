@@ -7,6 +7,7 @@ Created on Tue Jan 30 10:56:58 2018
 import numpy as np
 from .PCAView import PCA
 from .core_algorithm.ElPrincGraph import ElPrincGraph
+from .core_algorithm.MakeUniformElasticMatrix import MakeUniformElasticMatrix
 
 #def PCA(data):
 #    """
@@ -40,11 +41,14 @@ def computeElasticPrincipalGraph(data, NumNodes, newDim=None, drawPCAview=True,
                                  shrinkGrammar=None, ComputeMSEP=False,
                                  MaxBlockSize=100000, TrimmingRadius=np.inf,
                                  MaxNumberOfIterations=10, eps=0.01,
-                                 verbose=True,nReps=1,ProbPoints=1):
+                                 verbose=True,nReps=1,ProbPoints=1,Topo="None"):
     
     NodePositions = np.zeros((nReps+1, NumNodes, 3))
     ElasticMatrix = np.zeros((nReps+1, NumNodes, NumNodes))
-    Edges = np.zeros((nReps+1, 2, NumNodes-1))
+    Edges = np.zeros((nReps + 1, 2, NumNodes - 1))
+    if Topo=="Circle":
+        Edges = np.zeros((nReps + 1, 2, NumNodes))
+
 
     for i in range(0, nReps):
         idx = np.random.uniform(0, 1, np.shape(data)[0]) < ProbPoints

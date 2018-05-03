@@ -16,7 +16,7 @@ def computeElasticPrincipalCircle(data, NumNodes, newDim=None,
                                   Lambda=0.01, Mu=0.1, ComputeMSEP=False,
                                   MaxBlockSize=100000, TrimmingRadius=np.inf,
                                   MaxNumberOfIterations=10, eps=0.01,
-                                  verbose=True):
+                                  verbose=True,nReps=1,ProbPoints=1):
     NodeP = np.zeros((4, data.shape[1]))
     v, u, s = PCA(data)
     mn = data.mean(axis=0)
@@ -38,4 +38,4 @@ def computeElasticPrincipalCircle(data, NumNodes, newDim=None,
                                             np.array([]), ComputeMSEP,
                                             MaxBlockSize, TrimmingRadius,
                                             MaxNumberOfIterations, eps,
-                                            verbose)
+                                            verbose,nReps,ProbPoints,Topo="Circle")
