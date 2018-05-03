@@ -30,7 +30,7 @@ Installation
 
 To install that package, clone this git, open a terminal on the root of the git folder and type:
 ```bash
-pip3.6 install .
+pip install .
 ```
 
 Here is a notebook showing cases of [basic usage](elpigraph/docs/Basic%20usage.ipynb)
