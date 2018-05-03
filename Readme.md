@@ -1,7 +1,3 @@
--   [Description](#description)
--   [Installation](#installation)
--   [Usage](#usage)
-
 Description
 ===========
 
@@ -10,10 +6,20 @@ self-contained description of the algorithm is available
 [here](https://github.com/auranic/Elastic-principal-graphs/blob/master/ElPiGraph_Methods.pdf)
 or on this [arXiv paper](https://arxiv.org/abs/1804.07580)
 
+A [R implementation](https://github.com/Albluca/ElPiGraph.R) of this algorithm is also available,
+coded by [Luca Albergante](https://github.com/Albluca)
+
 A native MATLAB implementation of the algorithm (coded by [Andrei
 Zinovyev](https://github.com/auranic/) and [Evgeny
 Mirkes](https://github.com/Mirkes)) is also
 [available](https://github.com/auranic/Elastic-principal-graphs)
+
+Citation
+========
+
+When using this package, please cite our preprint:
+Albergante, L.  et al . Robust and Scalable  Learning of Data Manifold with Complex Topologies via ElPiGraph.
+arXiv: [1804.07580](https://arxiv.org/abs/1804.07580) (2018)
 
 Requirements
 ============
