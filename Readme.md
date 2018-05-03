@@ -18,13 +18,19 @@ Mirkes](https://github.com/Mirkes)) is also
 Requirements
 ============
 
-This code was tested with Python 3. In addition, the following packages are needed:
+This code was tested with Python 3.6, the following packages are needed:
 
 -	numpy
 -	matplotlib
+-   scipy
+-   pip
 
+Installation
+============
 
-Usage
-=====
+To install that package, open a terminal on the root of the git folder and type:
+```console
+pip3.6 install .
+```
 
-Here is a notebook showing cases of [basic usage](docs/Basic%20usage.ipynb)
+Here is a notebook showing cases of [basic usage](elpigraph/docs/Basic%20usage.ipynb)
