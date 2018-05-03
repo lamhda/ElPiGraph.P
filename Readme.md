@@ -18,6 +18,7 @@ Citation
 ========
 
 When using this package, please cite our preprint:
+
 Albergante, L.  et al . Robust and Scalable  Learning of Data Manifold with Complex Topologies via ElPiGraph.
 arXiv: [1804.07580](https://arxiv.org/abs/1804.07580) (2018)
 
@@ -31,8 +32,8 @@ This code was tested with Python 3.6, the following packages are needed:
 -   scipy
 -   pip
 
-Installation
-============
+Installation & Usage
+====================
 
 To install that package, clone this git, open a terminal on the root of the git folder and type:
 ```bash
