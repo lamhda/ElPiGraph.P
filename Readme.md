@@ -28,8 +28,8 @@ This code was tested with Python 3.6, the following packages are needed:
 Installation
 ============
 
-To install that package, open a terminal on the root of the git folder and type:
-```console
+To install that package, clone this git, open a terminal on the root of the git folder and type:
+```bash
 pip3.6 install .
 ```
 
