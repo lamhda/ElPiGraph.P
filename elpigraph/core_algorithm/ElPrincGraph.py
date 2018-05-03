@@ -7,6 +7,7 @@ Created on Fri Jan 26 10:48:28 2018
 import numpy as np
 from .MakeUniformElasticMatrix import MakeUniformElasticMatrix
 from . import ApplyOptimalGraphGrammarOperation as ao
+from elpigraph.PCAView import PCA
 
 
 # TODO add report
@@ -37,13 +38,29 @@ def ElPrincGraph(X, NumNodes, Lambda, Mu, InitNodePosition=None,
         em = MakeUniformElasticMatrix(edges, Lambda, Mu)
     if CurrentNumberOfNodes == 0:
         CurrentNumberOfNodes = em.shape[0]
+
+        ## Louis Modification
+        mv = X.mean(axis=0)
+        data_centered = X - mv
+        vglobal, uglobal, explainedVariances = PCA(data_centered)
+        PC1 = uglobal[:,0]
+
+        mn = np.mean(PC1)
+        st = np.std(PC1)
+
+        NodeP = np.dot(np.linspace(mn - st, mn + st, CurrentNumberOfNodes).reshape(2,1), vglobal[:,0].reshape(1,3))
+        #NodeP = NodeP+mv.reshape(3,1)
+
+        ## OLD CODE
         _, _, v = np.linalg.svd(X)
-        v = abs(v[0, ])
+        v = abs(v[0,])
         mn = X.mean(axis=0)
-        st = np.std((X*v).sum(axis=1), ddof=1)
+        st = np.std((X * v).sum(axis=1), ddof=1)
         delta = 2 * st / (CurrentNumberOfNodes - 1)
-        NodeP = ((mn-st*v) +
+        NodeP2 = ((mn - st * v) +
                  ((delta * range(CurrentNumberOfNodes))[np.newaxis].T * v))
+
+
     CurrentNumberOfNodes = NodeP.shape[0]
     UR = em.diagonal()
     if (UR > 0).sum() == 0:
