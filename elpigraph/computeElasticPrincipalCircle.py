@@ -6,7 +6,7 @@ Created on Mon Feb  5 13:46:32 2018
 """
 
 from .computeElasticPrincipalGraph import computeElasticPrincipalGraph
-from .PCAView import PCA
+from .PCA import PCA
 import numpy as np
 
 

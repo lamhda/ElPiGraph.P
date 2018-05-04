@@ -1,2 +1,0 @@
-#from elpigraph.core_algorithm.ElPrincGraph import ElPrincGraph
-#from elpigraph.core_algorithm.MakeUniformElasticMatrix import MakeUniformElasticMatrix

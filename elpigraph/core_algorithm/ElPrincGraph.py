@@ -7,7 +7,7 @@ Created on Fri Jan 26 10:48:28 2018
 import numpy as np
 from .MakeUniformElasticMatrix import MakeUniformElasticMatrix
 from . import ApplyOptimalGraphGrammarOperation as ao
-from elpigraph.PCAView import PCA
+from elpigraph.PCA import PCA
 
 
 # TODO add report
