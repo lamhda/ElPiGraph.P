@@ -4,9 +4,9 @@ Created on Mon Jan 22 11:02:30 2018
 
 @author: Alexis Martin
 """
-from core_algorithm.PartitionData import PartitionData
-from core_algorithm.GraphGrammarOperation import GraphGrammarOperation
-from core_algorithm.PrimitiveElasticGraphEmbedment import PrimitiveElasticGraphEmbedment
+from .PartitionData import PartitionData
+from .GraphGrammarOperation import GraphGrammarOperation
+from .PrimitiveElasticGraphEmbedment import PrimitiveElasticGraphEmbedment
 import numpy as np
 
 
@@ -41,7 +41,7 @@ def ApplyOptimalGraphGrammarOperation(X, NodePositions, ElasticMatrix,
         Mus[inds] = 0
         EM = EM1 + np.diag(Mus)
         # TODO add pointweights ?
-        nodep, ElasticEnergy, part, dist, *_ = (
+        nodep, ElasticEnergy, part, dist, MSE, EP, RP = (
                 PrimitiveElasticGraphEmbedment(X,
                                                NodePositionsArrayAll[:, :, i],
                                                EM, MaxNumberOfIterations, eps,
@@ -53,4 +53,7 @@ def ApplyOptimalGraphGrammarOperation(X, NodePositions, ElasticMatrix,
             partition = part
             dists = dist
             NewElasticMatrix = EM
-    return NewNodePositions, NewElasticMatrix, partition, dists
+
+    # if verbose:
+    #     print("E=", ElasticEnergy, ", MSE=", MSE, ", EP=", EP, ", RP=", RP)
+    return NewNodePositions, NewElasticMatrix, partition, dists, ElasticEnergy, MSE, EP, RP

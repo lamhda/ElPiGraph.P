@@ -5,8 +5,8 @@ Created on Mon Feb  5 13:46:32 2018
 @author: Alexis Martin
 """
 
-import computeElasticPrincipalGraph as EPG
-from PCAView import PCA
+from .computeElasticPrincipalGraph import computeElasticPrincipalGraph
+from .PCA import PCA
 import numpy as np
 
 
@@ -16,7 +16,7 @@ def computeElasticPrincipalCircle(data, NumNodes, newDim=None,
                                   Lambda=0.01, Mu=0.1, ComputeMSEP=False,
                                   MaxBlockSize=100000, TrimmingRadius=np.inf,
                                   MaxNumberOfIterations=10, eps=0.01,
-                                  verbose=True):
+                                  verbose=True,nReps=1,ProbPoints=1):
     NodeP = np.zeros((4, data.shape[1]))
     v, u, s = PCA(data)
     mn = data.mean(axis=0)
@@ -29,7 +29,7 @@ def computeElasticPrincipalCircle(data, NumNodes, newDim=None,
     NodeP[2, :] = mn + np.dot(st1, v1.T) + np.dot(st2, v2.T)
     NodeP[3, :] = mn + np.dot(st1, v1.T) - np.dot(st2, v2.T)
     ed = np.array([[0, 1], [2, 3], [1, 2], [3, 0]])
-    return EPG.computeElasticPrincipalGraph(data, NumNodes, newDim,
+    return computeElasticPrincipalGraph(data, NumNodes, newDim,
                                             drawPCAview,
                                             drawAccuracyComplexity,
                                             drawEnergy, Lambda,
@@ -38,4 +38,4 @@ def computeElasticPrincipalCircle(data, NumNodes, newDim=None,
                                             np.array([]), ComputeMSEP,
                                             MaxBlockSize, TrimmingRadius,
                                             MaxNumberOfIterations, eps,
-                                            verbose)
+                                            verbose,nReps,ProbPoints,Topo="Circle")
