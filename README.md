@@ -46,3 +46,7 @@ pip install git+https://github.com/LouisFaure/ElPiGraph.P.git
 ```
 
 Here is a notebook showing cases of [basic usage](elpigraph/docs/Basic%20usage.ipynb)
+
+## Acknowledgements
+
+Supported by the University of Leicester (UK), the Ministry of Education and Science of the Russian Federation, project N 14.Y26.31.0022
